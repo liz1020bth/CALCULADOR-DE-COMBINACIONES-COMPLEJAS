@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADOR DE COMBINACIONES COMPLEJAS</title>
+    <link rel="stylesheet" href="css/stilos.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>ANÁLISIS DE PROBABILIDAD ESTRUCTURAL </h1>
+        <p class="subtitle">Simulador Matemático para Combinaciones de Sorteos Complejos (Paso a Paso)</p>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <div class="left-column">
+            <section class="card simulation-card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <span class="icon-bg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d946ef" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <circle cx="15.5" cy="15.5" r="1.5"></circle>
+                                <circle cx="15.5" cy="8.5" r="1.5"></circle>
+                                <circle cx="8.5" cy="15.5" r="1.5"></circle>
+                            </svg>
+                        </span>
+                        <h2>Configuración Algorítmica</h2>
+                    </div>
+                    <div class="dots-menu">•••</div>
+                </div>
+
+                <div class="formula-box">
+                    <span class="formula-label">Fórmula General</span>
+                    <div class="formula-text">C(n, r) = n! / [r! * (n - r)!]</div>
+                </div>
+                
+                <form id="form-combinaciones" onsubmit="event.preventDefault(); calcularCombinaciones();">
+                    <div class="groups-wrapper">
+                        
+                        <div class="group-panel">
+                            <h3>Grupo Estándar 1 (Esferas Principales)</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="n1">Total Objetos (n_1)</label>
+                                    <input type="number" id="n1" value="59" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="r1">Extraídos (r_1)</label>
+                                    <input type="number" id="r1" value="5" min="0" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group-panel">
+                            <h3>Grupo Especial 2 (Powerball)</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="n2">Total Objetos (n_2)</label>
+                                    <input type="number" id="n2" value="35" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="r2">Extraídos (r_2)</label>
+                                    <input type="number" id="r2" value="1" min="0" required>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">
+                        Procesar Combinatoria Combinada
+                        <span class="btn-icon">🔮</span>
+                    </button>
+                </form>
+            </section>
+
+            <div id="resultado-combinaciones" class="result-box hidden">
+                </div>
+        </div>
+
+        <div class="right-column">
+            <section class="card guide-card">
+                <div class="card-header-simple">
+                    <h3>Guía de Pasos</h3>
+                    <span class="arrow">&gt;</span>
+                </div>
+                <ol class="steps-list">
+                    <li>Establezca Espacios Muestrales</li>
+                    <li>Defina Cantidad de Extracciones</li>
+                    <li>Compute Factoriales Propios</li>
+                    <li>Analice el Espacio Total</li>
+                </ol>
+            </section>
+
+            <section class="card gallery-card">
+                <h3>Panel del Sistema Combinatorio</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image ball-pool-img">
+                            <svg viewBox="0 0 100 60" width="80" height="50">
+                                <circle cx="50" cy="30" r="22" fill="#1e293b" opacity="0.8" stroke="#d946ef" stroke-width="1.5"/>
+                                <circle cx="42" cy="24" r="5" fill="#fff"/>
+                                <circle cx="56" cy="26" r="5" fill="#f472b6"/>
+                                <circle cx="48" cy="38" r="5" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <span class="gallery-label">Esferas Principales</span>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image powerball-img">
+                            <svg viewBox="0 0 100 60" width="80" height="50">
+                                <circle cx="50" cy="30" r="18" fill="#df2a86" stroke="#fff" stroke-width="2"/>
+                                <text x="50" y="35" font-family="sans-serif" font-size="14" fill="#fff" font-weight="bold" text-anchor="middle">PB</text>
+                                <path d="M20,10 L30,20 M80,10 L70,20 M20,50 L30,40 M80,50 L70,40" stroke="#df2a86" stroke-width="2" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <span class="gallery-label">Esfera Multiplicadora</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <script src="js/ejercicio.js"></script>
+</body>
+</html>

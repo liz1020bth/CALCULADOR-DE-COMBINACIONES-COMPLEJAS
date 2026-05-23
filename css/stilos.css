@@ -1,0 +1,388 @@
+/* --- Variables de Paleta Ejecutiva y Tonos Rosas Magnos --- */
+:root {
+    --bg-page: #fbf9f6;         /* Fondo marfil crema de alta costura */
+    --surface: #ffffff;         /* Fondo de tarjetas */
+    --blue-dark: #0f172a;       /* Azul noche muy profundo */
+    --accent: #df2a86;          /* Fucsia/Oro Rosa elegante para botones y destaques */
+    --accent-light: #fdf2f8;    /* Fondo rosa suave para errores o avisos */
+    --text-dark: #1e293b;       /* Texto principal */
+    --text-muted: #64748b;      /* Texto descriptivo secundario */
+    --border-radius-lg: 18px;
+    --border-radius-sm: 8px;
+    --shadow: 0 12px 35px rgba(15, 23, 42, 0.04);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', 'Times New Roman', Times, serif; /* Misma tipografía distinguida Serif */
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 35px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.main-header h1 {
+    font-size: 2.1rem;
+    color: var(--blue-dark);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.main-header .version {
+    color: var(--accent);
+    font-family: system-ui, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.main-header .subtitle {
+    font-family: system-ui, sans-serif;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+@media (min-width: 850px) {
+    .dashboard-container {
+        grid-template-columns: 1.3fr 0.7fr;
+    }
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid rgba(223, 42, 134, 0.1);
+    border-radius: var(--border-radius-lg);
+    padding: 26px;
+    box-shadow: var(--shadow);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-bg {
+    background-color: #fdf4f9;
+    padding: 8px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(223, 42, 134, 0.15);
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+.dots-menu {
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* --- Bloque de la Fórmula --- */
+.formula-box {
+    background-color: var(--blue-dark);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 25px;
+}
+
+.formula-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.formula-text {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* --- Subpaneles internos de Grupos --- */
+.groups-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.group-panel {
+    background-color: #fcfdfd;
+    border: 1px solid #f1f5f9;
+    border-radius: var(--border-radius-lg);
+    padding: 18px;
+}
+
+.group-panel h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input {
+    font-family: system-ui, sans-serif;
+    background-color: #f1f5f9;
+    color: var(--blue-dark);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius-sm);
+    padding: 10px 14px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(223, 42, 134, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent) 0%, #be123c 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(223, 42, 134, 0.2);
+}
+
+.btn-submit:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(223, 42, 134, 0.35);
+}
+
+.result-box {
+    background: linear-gradient(to right, #fdfbfc, #ffffff);
+    border: 1px solid rgba(223, 42, 134, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.result-header {
+    margin-bottom: 12px;
+}
+
+.success-badge {
+    font-family: system-ui, sans-serif;
+    background-color: #10b981;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.combo-breakdown {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.total-highlight {
+    background: #fdf2f8;
+    border: 1px solid #fbcfe8;
+    padding: 16px;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+}
+
+.label-total {
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.number-total {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #9d174d;
+}
+
+.card-header-simple {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(223, 42, 134, 0.1);
+    padding-bottom: 8px;
+}
+
+.card-header-simple h3, .gallery-card h3 {
+    font-size: 1.15rem;
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+.arrow { color: var(--text-muted); font-family: monospace; }
+
+.steps-list { list-style: none; counter-reset: step-counter; }
+.steps-list li {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.steps-list li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter) ". ";
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+/* Galería de Conceptos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+@media (min-width: 480px) and (max-width: 849px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.gallery-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.gallery-image {
+    width: 100%;
+    height: 90px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ball-pool-img { background: linear-gradient(135deg, #0f172a, #1e293b); }
+.powerball-img { background: linear-gradient(135deg, #4c0519, #880e4f); }
+
+.gallery-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Clases de Control Operacional */
+.hidden { display: none; }
+
+.error-box { background: #fef2f2; border-color: #fecaca; }
+.error-badge { background: #ef4444; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; display: inline-block;}
+
+.animate-fade {
+    animation: slideUp 0.35s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 850px) {
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .form-row {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+}
+
+.gallery-image svg {
+    max-width: 100%;
+    height: auto;
+}
